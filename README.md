@@ -4,6 +4,10 @@
 
 #### To run the program, use virtual enviroment and open console into mail folder and run ImageProcessing.py
 
-#### Program takes png (atm) images from the dataset folder and then it copies and modifies them into 128x128 (16 color) png images.
+#### Program only takes .png images (atm) from the dataset folder and then it copies and modifies them into 128x128 (16 color) png images.
 
-<img src="logo.png" class="img-responsive" alt=""> </div>
+#### Script is compatible with windows systems
+
+<br>
+
+<img src="logo.png" alt="" style= "width:100%"></img>

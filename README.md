@@ -6,4 +6,4 @@
 
 #### Program takes png (atm) images from the dataset folder and then it copies and modifies them into 128x128 (16 color) png images.
 
-![alt text](https://github.com/jjpaa/Image_converter/logo.png)
+<img src="logo/logo.png" class="img-responsive" alt=""> </div>

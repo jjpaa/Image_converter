@@ -7,3 +7,5 @@
 *.jpeg
 *.raw
 *.eps
+
+!logo.png

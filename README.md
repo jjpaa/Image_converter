@@ -6,4 +6,4 @@
 
 #### Program takes png (atm) images from the dataset folder and then it copies and modifies them into 128x128 (16 color) png images.
 
-<img src="logo/logo.png" class="img-responsive" alt=""> </div>
+<img src="logo.png" class="img-responsive" alt=""> </div>

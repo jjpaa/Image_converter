@@ -8,6 +8,4 @@
 
 #### Script is compatible with windows systems
 
-<br>
-
-<img src="logo.png" alt="" style= "width:100%"></img>
+<img src="logo.png" width = "100%"></img>

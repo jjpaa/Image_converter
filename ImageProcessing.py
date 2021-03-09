@@ -1,6 +1,13 @@
 from PIL import Image
 import glob
 import os
+from pathlib import Path
+
+print("Give animal name")
+animal = input()
+
+# if not(os.path.isdir(".\\processed")):
+#     os.mkdir(".\\processed")
 
 # Color filtter function
 def filtterFunc(r, g, b):
@@ -49,15 +56,16 @@ def filtterFunc(r, g, b):
                 new_r, new_g, new_b = color_list[i][0], color_list[i][1], color_list[i][2]
 
     return new_r, new_g, new_b
-# End of color filter
 
-cwd = os.getcwd() # get current path
 temp = 0
 
-for filepath in glob.iglob(cwd + "\\dataset" + "\\*.jpg"):
+for filepath in glob.iglob(".\\dataset" + "\\*.*g"): # end with .*g
     temp = temp + 1
+    if temp % 100 == 0:
+        print("Processed: " + str(temp))
+
     # Loading the image and processing
-    image = Image.open(filepath)
+    image = Image.open(filepath,'r')
     Image2 = image.resize((128,128))
     newImage = Image2.convert('RGB') # Caused errors without converting to RGB
     pixels = newImage.load()
@@ -68,7 +76,11 @@ for filepath in glob.iglob(cwd + "\\dataset" + "\\*.jpg"):
             r, g, b = filtterFunc(r, g, b)  # call for color filtter
             pixels[i,j] = (r, g, b) # insert new colors
             
-        save_path = str(cwd) + "\\processed"
-        fileName = str(temp) + ".png"
+        # save_path = "processed"
+        # fileName = animal + str(temp) + ".jpg"
+        # newImage.save(Path.cwd().joinpath('/' + save_path, fileName))
+
+        save_path = ".\\processed"
+        fileName = animal + "_" + str(temp) + ".jpg"
         completeName = os.path.join(save_path, fileName) # os.path.join removes errors while saving into folder
-        newImage.save(completeName)
+        newImage.save(completeName, 'JPEG')

@@ -6,9 +6,6 @@ from pathlib import Path
 print("Give animal name")
 animal = input()
 
-# if not(os.path.isdir(".\\processed")):
-#     os.mkdir(".\\processed")
-
 # Color filtter function
 def filtterFunc(r, g, b):
 
@@ -59,7 +56,9 @@ def filtterFunc(r, g, b):
 
 temp = 0
 
-for filepath in glob.iglob(".\\dataset" + "\\*.*g"): # end with .*g
+# Loads images from dataset folder
+# Typical images files end with .*g file-ending. For example .jpg, .jpeg, .png
+for filepath in glob.iglob(".\\dataset" + "\\*.*g"): # load files that end with .*g
     temp = temp + 1
     if temp % 100 == 0:
         print("Processed: " + str(temp))
@@ -75,11 +74,8 @@ for filepath in glob.iglob(".\\dataset" + "\\*.*g"): # end with .*g
             r, g, b = newImage.getpixel((i,j))       
             r, g, b = filtterFunc(r, g, b)  # call for color filtter
             pixels[i,j] = (r, g, b) # insert new colors
-            
-        # save_path = "processed"
-        # fileName = animal + str(temp) + ".jpg"
-        # newImage.save(Path.cwd().joinpath('/' + save_path, fileName))
 
+        # Saves image and provides a name
         save_path = ".\\processed"
         fileName = animal + "_" + str(temp) + ".jpg"
         completeName = os.path.join(save_path, fileName) # os.path.join removes errors while saving into folder
